@@ -1,0 +1,12 @@
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\bin\Release\net6.0\ATripToRemember.Utility.deps.json
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\bin\Release\net6.0\ATripToRemember.Utility.dll
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\bin\Release\net6.0\ref\ATripToRemember.Utility.dll
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\bin\Release\net6.0\ATripToRemember.Utility.pdb
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\obj\Release\net6.0\ATripToRemember.Utility.csproj.AssemblyReference.cache
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\obj\Release\net6.0\ATripToRemember.Utility.GeneratedMSBuildEditorConfig.editorconfig
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\obj\Release\net6.0\ATripToRemember.Utility.AssemblyInfoInputs.cache
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\obj\Release\net6.0\ATripToRemember.Utility.AssemblyInfo.cs
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\obj\Release\net6.0\ATripToRemember.Utility.csproj.CoreCompileInputs.cache
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\obj\Release\net6.0\ATripToRemember.Utility.dll
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\obj\Release\net6.0\ref\ATripToRemember.Utility.dll
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Utility\obj\Release\net6.0\ATripToRemember.Utility.pdb
