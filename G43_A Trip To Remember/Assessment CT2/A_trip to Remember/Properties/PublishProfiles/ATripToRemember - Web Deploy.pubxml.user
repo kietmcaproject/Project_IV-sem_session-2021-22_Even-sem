@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe/uXlMghpEOVbTQXM5j04QAAAAACAAAAAAAQZgAAAAEAACAAAAD7uq+x44AHGFte+q8U49pFM0ND/mx44G48K9gLdS0+MwAAAAAOgAAAAAIAACAAAACn+cHF5v9PKQqcTr5JeMgxn0Iv17IZPhEFuiKRHzyn74AAAAAI6xjhXjwOivfgMrxWk95Fm/5yC21zO+riZIfpdnpzXj/wMZdqj6aZd072ff6zhdOOZNOpj18Hd9WMMD65fDXwEhHwnhAq8be/RT881D9y6aZyDVFukpSzRimkybjafdoqOFqjxvnAPmPEX5Fdj9+pMbDv81IX0by1XQV3n4munkAAAADljM7YcOUr87iDRIPmapYbG316Oo/00j/sfwGrzI4JD547W/7LOidA0WVjnvLbAe2kEjyKjFPuZi2mt4dpUlND</EncryptedPassword>
+    <History>True|2022-05-30T09:50:39.7109607Z;True|2022-05-30T13:03:20.7778521+05:30;True|2022-05-30T12:20:34.3020345+05:30;True|2022-05-29T23:40:23.2075408+05:30;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:dev098karanserver.database.windows.net,1433%3bInitial Catalog=atriptoremember%3bPersist Security Info=False%3bUser ID=admin-sql%3bPassword=Project%40123%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
