@@ -1,0 +1,59 @@
+<%- include('./partials/header.ejs')%>
+   <!-- Navbar content -->
+   <section>
+	<div class="gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-25">
+					<label for="title"></label>
+				</div>
+			<div class="col-75">
+		<ul>
+			
+				<li>
+					
+					
+					<% if( event){ %>
+
+						<div class="container">
+							<h5>welcome to <%= event.name %></h5><br><br>
+							<b>Published Date:</b><span><%= event.date %></span>/<span><%= event.month %></span>/<span><%= event.year %></span><br>
+							<b>schedule:</b>From: <span><%= event.time %>: <%= event.clock %></span><br>
+							<b>Description:</b> <span>  <%= event.description %> </span><br><br>
+							<div class="row">
+							  <div class="col-md-4">
+								<div class="thumbnail">
+								  <a href="<%= event.websiteURL %>" target="_blank">
+									<img src= "/uploads/<%= event.img[0] %>" alt="Lights" style="width:100%;border-radius: 50%;">
+									<div class="caption">
+									  <p><%= event.name %>.</p>
+									</div>
+								  </a>
+								</div>
+							  </div>
+							  
+							  
+							</div>
+							<a class="prv" href="<%= event.websiteURL %>" title="">Click To Visit <i class="lni lni-arrow-right"></i></a>
+						  </div>
+						<% } %>
+					
+				</li>
+				<br>
+				
+			</ul>
+		</div>
+	</div>
+	
+	
+</section>
+<%- include('./partials/footer.ejs')%>
+
+   
+  
+  
+ 
+   
+  
+  
+  

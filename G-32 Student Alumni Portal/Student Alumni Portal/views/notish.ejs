@@ -1,0 +1,70 @@
+<%- include('./partials/create_notice.ejs')%>
+   <!-- Navbar content -->
+     <div class="container-fluid" style="padding: 10em; background-image:url(/images/mak.png);background-position:center;background-size:cover;background-repeat:no-repeat">
+   
+  
+   </div>
+  <!-- crosel content -->
+  <section>
+    <div class="gap redish high-opacity">
+      <div class="content-bg-wrap" style="background: url(/images/resources/animate-bg.png)"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="head-meta">
+              <h5>Publice Notice</h5>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <div class="container">
+    <form method="post" action="/notice/create-notice">
+      
+      <div class="row">
+        <div class="col-25">
+          <label for="title">Notice Title</label>
+        </div>
+        <div class="col-75">
+          <input type="text" placeholder="title" name="title">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="description">Notice Description</label>
+        </div>
+        <div class="col-75">
+          <textarea id="subject" name="description" placeholder="Write description.." style="height:200px"></textarea>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="Date">Notice Date</label>
+        </div>
+        <div class="col-75">
+          <input style="width: 40%;padding: 5px 7px;; " type="date" name="date" id="subject" autocomplete="off">
+          
+        </div>
+      </div>
+      
+      
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="Date"></label>
+        </div>
+        <div class="col-75">
+          <input id="subject" type="submit" value="Publish">
+          
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- crosel content -->
+  <%- include('./partials/footer.ejs')%>
+
+  

@@ -1,0 +1,41 @@
+<%- include('./partials/header.ejs')%>
+   <!-- Navbar content -->
+     <div class="container-fluid" style="padding: 10em; background-image:url(/images/mak.png);background-position:center;background-size:cover;background-repeat:no-repeat">
+   
+  
+   </div>
+  <!-- crosel content -->
+  
+<!-- crosel content -->
+  <!-- crosel content -->
+ 
+    <!-- add content -->
+   
+  <div class="container-fluid " style="background-color:#1ac5d6">
+    <% if( user){ %>
+    <div class="row align-items-start">
+      <div class="col-sm-3">
+        <img style="border-radius: 50%;" src="/upload/<%= user.userImage %>" class="img-thumbnail mx-auto mt-5 mb-5 d-block" alt="..." width="150px" height="150px">
+      </div>
+      <div class="col-sm-4">
+      <p style="margin-top:60px;"><strong><%= user.fullname %> </strong><br>
+        <b>Country:</b> <%= user.country %><br>
+        <b>Contact:</b> <%= user.mobile %><br>
+        <b>Batch:</b> <%= user.batch %><br>
+        <b>Branch:</b> <%= user.branch %><br>
+        <b>eMail:</b><%= user.email %><br>
+        <b>collage:</b><%= user.college %><br>
+        <b>Address:</b><%= user.address %><br>
+        <b>City:</b><%= user.city %><br>
+        <b>State:</b><%= user.state %><br>
+        <a href="#">View Profile</a>
+        
+                  </p>
+      </div>
+      
+   </div>
+   <% } %>
+  </div>
+  <%- include('./partials/footer.ejs')%>
+  
+  

@@ -1,0 +1,56 @@
+<%- include('./partials/header.ejs')%>
+   <!-- Navbar content -->
+     
+  <!-- crosel content -->
+  
+<!-- crosel content -->
+  <!-- crosel content -->
+  <section>
+    <div class="gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5>List Of Aluminies</h5>
+                    <ul>
+                    <% alumini.forEach(function(alumini){ %>
+                        
+                        <div class="event-party">
+                            
+                            <img  style="border-radius: 50%;" src="/upload/<%= alumini.userImage %>" class="img-thumbnail mx-auto mt-5 mb-5 d-block" alt="..." width="150px" height="150px">
+                            <div class="party-meta">
+                                <li>
+                                <h5><%= alumini.fullname %></h5>
+                                <b>Collage:</b> <span><%=alumini.college %></span><br>
+                                <b>Batch:</b><span><%= alumini.batch %></span><br>
+                                <b>Email:</b><span><%= alumini.email %></span><br>
+                                <b>Branch:</b><span><%= alumini.branch %></span><br>
+                                 <b>Contact:</b><span><%= alumini.mobile %></span><br>
+                                 <b>Send Email:</b><a href="/email/alumni/<%= alumini.id %>/email">Click To Send</a><br>
+                                 <b>Send Message:</b><a href="/message/alumni/<%= alumini.id %>/message">Click To Send</a>
+                            </li>
+                                
+                            </div>
+                        
+                        </div>
+                    
+                        <% }) %>
+                    </ul>
+                
+                    <div class="loadmore gap">
+                        <div class="loader">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <span>Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- add content -->
+   
+ 
+    <%- include('./partials/footer.ejs')%>

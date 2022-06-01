@@ -1,0 +1,36 @@
+<%- include('./partials/header.ejs')%>
+   <!-- Navbar content -->
+   <section>
+	<div class="gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-25">
+					<label for="title"><h5> Notice</h5></label>
+				</div>
+			<div class="col-75">
+		<ul>
+			<% jobs.forEach(function(jobs){ %>
+				<li>
+					<h5><%= jobs.type %> <span>Opening</span></h5>
+					<b>Job Type:</b> <span><%= jobs.type %></span><br>
+					<b>Published Date:</b><span><%= jobs.date %></span>/<span><%= jobs.month %></span>/<span><%= jobs.year %></span><br>
+					<b>Jub position :</b> <span> <%= jobs.position %></span><br>
+					<b>Description:</b> <span> <%= jobs.description %></span><br>
+					<b>Categories:</b> <span> <%= jobs.category %></span><br>
+					<b>Published By:</b> <span> <%= jobs.creater %></span><br>
+					<a class="prv" href="<%= jobs.jobURL %>" title=""> apply Now <i class="lni lni-arrow-right"></i></a>
+				</li>
+				<br>
+				<% }) %>
+			</ul>
+		</div>
+	</div>
+	
+	
+</section>
+<%- include('./partials/footer.ejs')%>
+
+   
+  
+  
+ 

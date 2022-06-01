@@ -1,0 +1,41 @@
+<%- include('./partials/header.ejs')%>
+   <!-- Navbar content -->
+   
+   <section>
+            <div class="gap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="title"><h5> Notice</h5></label>
+                        </div>
+                    <div class="col-75">
+                <ul>
+                    <% notice.forEach(function(notice){ %>
+                        <li>
+                            <h5><%= notice.title %></a></h5>
+                            <b>Description:</b> <span><%= notice.description %></span><br>
+                            <b>Publlished Date:</b><span><%= notice.date %></span>/<span><%= notice.month %></span>/<span><%= notice.year %></span><br>
+                            <b>Published By:</b> <span><%= notice.creater %></span>
+                        </li>
+                        <br>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+            
+            
+    </section>
+<%- include('./partials/footer.ejs')%>
+    
+        
+                        
+                        
+                        
+                                
+                                
+                            
+                        
+                    
+                         
+                        
+                    

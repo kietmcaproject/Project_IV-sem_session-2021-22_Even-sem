@@ -1,0 +1,40 @@
+<%- include('./partials/header.ejs')%>
+  <!-- crosel content -->
+  
+  <section>
+    <div class="gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5>List Of Events</h5>
+                    <% events.forEach(function(event){ %>
+                        <div class="event-party">
+                            <img style=" border: 1px solid #ddd;
+                            border-radius: 50%;
+                            padding: 5px;
+                            width: 150px;"src="/uploads/<%= event.img[0] %>" alt="">
+                            <div class="party-meta">
+                                <b>Click Below Link For details:</b> <h5><a href="/events/eventdetail/<%= event.id %>"><%= event.name %></a></h5>
+                                <b>Description:</b> <p><%= event.description %></p>
+                              
+                                
+                            </div>
+                        </div>
+                        <% }) %>
+                
+                    <div class="loadmore gap">
+                        <div class="loader">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <span>Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<%- include('./partials/footer.ejs')%>
