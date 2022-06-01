@@ -1,0 +1,77 @@
+.login {
+    width: 90%;
+    max-width: 30rem;
+    margin: 10rem auto;
+    padding: 2rem;
+  }
+  
+  .login h1 {
+    text-align: center;
+  }
+  
+  .control {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+  
+  .control input {
+    flex: 3;
+    font: inherit;
+    padding: 0.8rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .control input:focus {
+    outline: none;
+    border-color: #13a9d3;
+    background: rgb(203, 235, 246);
+  }
+  
+  .actions {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    text-decoration: none;
+  }
+  
+  .actionsLink {
+    float: right;
+  }
+  
+  .actions button {
+    font: inherit;
+    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #8b005d;
+    color: white;
+    border-color: #21b4dd;
+    background: #21b4dd;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+    margin: 1rem 0;
+  }
+  
+  .actions button:focus {
+    outline: none;
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    background: #0fc0f1;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
+  }
+  
+  @media (min-width: 768px) {
+    .control {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+  
+  .error {
+    font: inherit;
+    color: rgb(238, 16, 16);
+  }

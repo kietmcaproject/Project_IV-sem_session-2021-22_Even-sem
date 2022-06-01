@@ -1,0 +1,7 @@
+.button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 7px;
+}
