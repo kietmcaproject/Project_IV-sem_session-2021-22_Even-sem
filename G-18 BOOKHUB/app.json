@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "BOOKHUB_MNS",
+    "slug": "BOOKHUB_MNS",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/booklogo.png",
+    "splash": {
+      "image": "./assets/booklogo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mns.bookub"
+    },
+    "android": {
+      "permissions": [],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/booklogo.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.mns.bookub"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
