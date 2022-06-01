@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "ExamDashboard";
+    Layout = "~/Views/Shared/_Exam_Layout.cshtml";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Exam Dashboard </title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    
+        <center >
+            <img src="~/Content/img/quiz-time-word-hanging-on-260nw-1327798571__1_-removebg-preview.png" />
+        </center>
+        
+    
+    <div class="container-fluid" style="width:50%; margin-top:50px;">
+        @Html.Raw(ViewBag.error);
+        @using (Html.BeginForm())
+        {
+
+            <Center> <h1 style="color: #f7fff7; font-size: 25px; ">Enter Room Name</h1></Center>
+            <input type="text" name="room" id="room" placeholder="Room Name" class="form-control" />
+
+            <br />
+            <Center>
+                <input type="submit" value="Submit" class="btn btn-success" style="width:150px" />
+            </Center>
+        }
+    </div>
+</body>
+</html>
+

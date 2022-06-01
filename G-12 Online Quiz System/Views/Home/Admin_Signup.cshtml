@@ -1,0 +1,73 @@
+﻿@model QuizApp.Models.Admin_tb
+
+@{
+    ViewBag.Title = "Admin_Signup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+<div class="card text-white bg-info mb-3 col-lg-offset-2 col-lg-8" style="max-width: 90rem; padding: 5px; margin-top: 10px; border-radius: 10px; box-shadow: -15px 11px 16px -7px rgba(0,0,0,0.29);">
+    <center> <div class="card-header"><h2 style="color: #212529;">Admin Sign Up</h2></div></center>
+    <div class="card-body" style="margin-left:5px;">
+        <center> <img src="~/Content/img/adminsignup.png" width="200" height="200" /></center>
+
+        <div style="margin-top:10px;">
+            @Html.Raw(ViewBag.InsertMessage)
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ADMIN_NAME, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.ADMIN_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ADMIN_NAME, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ADMIN_PASSWORD, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.ADMIN_PASSWORD, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ADMIN_PASSWORD, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-3 " })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Sign Up" class="btn btn-success" />
+                            @Html.ActionLink("If you have Registered already Please LOGIN", "Admin_login", "Home", new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+

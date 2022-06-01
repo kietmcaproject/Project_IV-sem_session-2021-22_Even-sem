@@ -1,0 +1,64 @@
+﻿@model QuizApp.Models.STUDENT_TBL
+
+<style>
+    .hr {
+        border-top: 2px solid #25ced1;
+    }
+
+</style>
+
+
+<div class="card border-danger  mb-3 col-lg-offset-3 col-lg-6 col-md-6 col-sm-6" style="width: 700px; border: 2px solid #25ced1; border-radius: 10px; margin-top: 10px; background-color: #ffffff; box-shadow: -15px 11px 16px -7px rgba(0,0,0,0.29);" >
+    <div class="card-body">
+        <center>
+            <div>
+
+                <img src="~/Content/img/studentlogin.png"  width="300" height="300" />
+
+            </div>
+        </center>
+
+        @Html.Raw(ViewBag.msg);
+
+        <div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <center> <h4 style="color: #073b3a; font-size:30px;"> Please Login your Account</h4></center>
+                    
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.STUDENT_NAME, htmlAttributes: new { @class = "control-label col-md-3", style = "font-size:16px; color:#073b3a;" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.STUDENT_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.STUDENT_NAME, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.STUDENT_PASSWORD, htmlAttributes: new { @class = "control-label col-md-3", style = "font-size:16px; color:#073b3a;" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.STUDENT_PASSWORD, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.STUDENT_PASSWORD, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-8">
+                            <input type="submit" value="Login" class="btn btn-success" />
+                            @Html.ActionLink("Go to Registration", "StudentSignup", "Home", new {@class="btn btn-info"});
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+
+    </div>
+</div>

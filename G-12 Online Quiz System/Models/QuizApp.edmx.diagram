@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="620abdfaacf34209baeec228d022f339" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="QuizAPPModel.Admin_tb" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizAPPModel.CATEGORY" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizAPPModel.QUESTION" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizAPPModel.SET_EXAM" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizAPPModel.STUDENT_TBL" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="QuizAPPModel.FK__CATEGORY__CAT_AD__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizAPPModel.FK__QUESTIONS__QUE_C__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizAPPModel.FK__SET_EXAM__ENROLL__4222D4EF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

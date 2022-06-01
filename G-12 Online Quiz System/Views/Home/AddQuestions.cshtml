@@ -1,0 +1,106 @@
+﻿@model QuizApp.Models.QUESTION
+
+@{
+    ViewBag.Title = "AddQuestions";
+    Layout = "~/Views/Shared/_Dashboard_Layout.cshtml";
+}
+
+<style>
+    .input_div{
+        width:50%;
+    }
+
+    .que {
+        color: #000000;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       font:bold;    
+     }
+
+    .opt{
+        color: #0060e6;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .cor_opt {
+        color: green;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+</style>
+
+<center><h2>Add Questions</h2></center>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <h1 style="color:green;">@ViewBag.msg</h1>
+    <hr style="border-top: 2px solid #1d3557;" />
+    <div class="form-horizontal  col-lg-offset-3">
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.QUE_CAT_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("QUE_CAT_ID", ViewBag.list as SelectList, "Select Category", htmlAttributes: new { @class = "form-control input_div" })
+                @Html.ValidationMessageFor(model => model.QUE_CAT_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.QUE_TEXT, htmlAttributes: new { @class = "control-label col-md-2 que" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.QUE_TEXT, new { htmlAttributes = new { @class = "form-control input_div" } })
+                @Html.ValidationMessageFor(model => model.QUE_TEXT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OPT_A, htmlAttributes: new { @class = "control-label col-md-2 opt" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OPT_A, new { htmlAttributes = new { @class = "form-control input_div" } })
+                @Html.ValidationMessageFor(model => model.OPT_A, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OPT_B, htmlAttributes: new { @class = "control-label col-md-2 opt" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OPT_B, new { htmlAttributes = new { @class = "form-control input_div" } })
+                @Html.ValidationMessageFor(model => model.OPT_B, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OPT_C, htmlAttributes: new { @class = "control-label col-md-2 opt" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OPT_C, new { htmlAttributes = new { @class = "form-control input_div" } })
+                @Html.ValidationMessageFor(model => model.OPT_C, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OPT_D, htmlAttributes: new { @class = "control-label col-md-2 opt" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OPT_D, new { htmlAttributes = new { @class = "form-control input_div" } })
+                @Html.ValidationMessageFor(model => model.OPT_D, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CORRECT_OPT, htmlAttributes: new { @class = "control-label col-md-2 cor_opt" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CORRECT_OPT, new { htmlAttributes = new { @class = "form-control input_div" } })
+                @Html.ValidationMessageFor(model => model.CORRECT_OPT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}

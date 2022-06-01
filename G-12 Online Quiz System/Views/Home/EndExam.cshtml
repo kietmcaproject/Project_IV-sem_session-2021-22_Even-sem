@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "EndExam";
+    Layout = "~/Views/Shared/_Exam_Layout.cshtml";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>End Exam</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        #button a{
+            text-decoration:none;
+            color:white;
+        }
+        #button {
+            background-color: #08bf38;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container-fluid " style="width: 50%; border: 2px solid #484848; border-radius: 10px; background-color: #52b788; box-shadow: -1px 14px 64px -14px rgba(0,0,0,1); margin-top: 10%; ">
+
+        <center><img src="~/Content/img/Thank-you-Thanks-Thank-Thankyou-PNG-images-Snipstock--3png.png" /></center>
+
+        <div style="color: #fefae0;">
+            <center>
+                
+                <h3>Your Score is : @TempData["Score"]</h3>
+            </center>
+        </div>
+    </div>
+    <br />
+    <center>
+        <div class="btn" id="button">@Html.ActionLink("Leave this page", "Student_login", "Home")</div>
+    </center>
+</body>
+</html>
+

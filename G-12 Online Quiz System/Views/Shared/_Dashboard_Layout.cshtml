@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Dashboard</title>
+    <style>
+
+        .Dash_menu{
+            position:fixed;
+        }
+
+        .Dash_menu ul li {
+            font-size: 25px;
+        }
+        .Dash_menu ul li a {
+                text-decoration: none;
+                color: #1d3557;
+         }
+
+        .sidemenu{
+            
+            height:50px;
+            margin-top:15px;
+
+            border-radius:5px;
+        }
+        #logout {
+            background-color: #d69f7e;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div  style="height:110vh; width:100%;">
+        <div class="col-lg-2 col-md-2 col-xs-2 col-sm-2" style="background-color: #1d3557; height: 100%; width:20%; float:left; ">
+            <center>
+                <div class="Dash_menu">
+                    <a href="@Url.Action("Index","Home")"><img src="~/Content/img/QuizLogo.png" alt="Logo" width="60" height="60" /></a>
+                    <hr />
+                    <ul class="list-group" style="width: 100%;">
+                        @* <li class="list-group-item">@Html.ActionLink("Report", "Report", "Home")</li>*@
+                        <li class="list-group-item sidemenu">@Html.ActionLink("Add Category", "Add_Category", "Home")</li>
+                        <li class="list-group-item sidemenu">@Html.ActionLink("Add Questions", "AddQuestions", "Home")</li>
+                        <li class="list-group-item sidemenu" id="logout">@Html.ActionLink("Logout", "AdminLogout", "Home")</li>
+                    </ul>
+
+                </div>
+            </center>
+        </div>
+
+        <div class="col-lg-10 col-md-10 col-xs-10 col-sm-10" style="background-color: #f1faee; width:80%; height: 100%; float: right;">
+            <div class="col-lg-offset-10 col-lg-2" style="background-color: #ffd166;  border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+                <center>
+                <h4><span style="color: #000000; " ></span> <span style="color: #ef476f; "><b> @Session["AdminName"]</b></span></h4>
+                </center>
+                
+
+            </div>
+            @RenderBody()
+        </div>
+
+        
+    </div>
+</body>
+</html>

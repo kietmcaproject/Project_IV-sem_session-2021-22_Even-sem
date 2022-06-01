@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title Online Quiz</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            background-color: #ffd166;
+            background-size: cover;
+        }
+        .menu-color {
+            color: #f7fff7;
+        }
+
+        .icon-bar {
+            background-color: #f7fff7;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color: #073b4c;">
+        
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="@Url.Action("Index","Home")"><img src="~/Content/img/QuizLogo.png" alt="Logo" width="50" height="50" /></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "menu-color" })</li>
+                        <li>@Html.ActionLink("Admin LogIn", "Admin_login", "Home", new { @class = "menu-color" })</li>
+                        <li>@Html.ActionLink("Student LogIn", "Student_login", "Home", new { @class = "menu-color" })</li>
+                    </ul>
+                </div>
+            </div>
+        
+    </nav>  
+
+
+        <div class="container body-content">
+            @RenderBody()
+
+
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

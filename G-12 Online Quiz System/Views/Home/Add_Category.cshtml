@@ -1,0 +1,83 @@
+﻿@model QuizApp.Models.CATEGORY
+
+@{
+    ViewBag.Title = "Add_Category";
+    Layout = "~/Views/Shared/_Dashboard_Layout.cshtml";
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Catagory</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <center> <h2>Add a new Catagory</h2></center>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+           
+            <hr style="border-top: 2px solid #1d3557;" />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.CAT_NAME, htmlAttributes: new { @class = "control-label col-md-2",style= "color:#1d3557; font-size:20px;" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CAT_NAME, new { htmlAttributes = new { @class = "form-control", style = "width:50%;" } })
+                    @Html.ValidationMessageFor(model => model.CAT_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <hr />
+
+    <div style="overflow: scroll; border: 2px solid #1d3557; border-radius:10px; padding:2px;">
+
+        <table class=" table table-responsive">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th> ROOM NAME</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in ViewData["list"] as List<QuizApp.Models.CATEGORY>)
+                {
+                <tr>
+                    <td>@item.CAT_ID</td>
+                    <td>@item.CAT_NAME</td>
+                    <td>@item.cat_encrypted_string</td>
+                </tr>
+                }
+
+
+            </tbody>
+
+
+        </table>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+﻿<!Doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home</title>
+
+    <style>
+        .home-sing{
+            margin-top:5px; 
+        }
+
+        #intro-text {
+            color: #f7fff7;
+            background-color: #073b4c;
+            width: 200px;
+            font-size: 30px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        #admin {
+            color: #3a0ca3;
+            font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        }
+        #student {
+            color: #379634;
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" style="height:85vh; width: 100%;">
+        <center><div id="intro-text">Online Quiz</div></center>
+        <div class="col-lg-6 col-md-6 col-sm-6" style="border-right: 5px solid #0399fc; border-bottom: 5px solid #0399fc; border-radius: 5px; height: 100%; width: 49%; float: left; ">
+            <center> <img src="~/Content/img/teacherHomepage.png" height="400" width="400" /></center>
+            
+            <center>
+                
+                <div class="home-sing">
+                    <h2 id="admin"><b>ADMIN</b></h2>
+                    <a href="@Url.Action("Admin_Signup","Home")" class="btn btn-primary">Sign Up</a>
+                    <a href="@Url.Action("Admin_login","Home")" class="btn btn-success">Sign In</a>
+                </div>
+            </center>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6" style="border-left: 5px solid #26c607; border-bottom: 5px solid #26c607; border-radius:5px; height: 100%; width: 49%; float: right; ">
+            <center><img src="~/Content/img/studentHome.png" height="400" width="400" /></center>
+            
+            <center>
+                <div class="home-sing">
+                    <h2 id="student"><b>STUDENT</b></h2>
+                    <a href="@Url.Action("StudentSignup","Home")" class="btn btn-primary">Sign Up</a>
+                    <a href="@Url.Action("Student_login","Home")" class="btn btn-success">Sign In</a>
+                </div>
+            </center>
+        </div>
+        
+    </div>
+
+</body>
+</html>

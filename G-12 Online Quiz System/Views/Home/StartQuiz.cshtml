@@ -1,0 +1,108 @@
+﻿@model QuizApp.Models.QUESTION
+
+@{
+    ViewBag.Title = "StartQuiz";
+    Layout = "~/Views/Shared/_Exam_Layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+    .labels{
+        font-size:20px;
+    }
+
+    .options{
+        font-size:15px;
+        font-weight:400;
+    }
+
+   
+
+</style>
+
+
+
+<div class="card text-white bg-secondary mb-3 col-lg-offset-2 col-lg-8" style="max-width: 90rem; margin-top:5%;">
+    <center> <div class="card-header" style="font-size:40px;">Questions</div></center>
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style="border: 5px solid #e63946; border-radius:10px; background-color: #ffd6a5; padding:5px; margin-top:10px;">
+
+                
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.QUE_TEXT, htmlAttributes: new { @class = "control-label col-md-2 labels" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.QUE_TEXT, new { htmlAttributes = new { @class = "form-control", style= "font-size:50px; font - weight:bold; " } })
+                        @Html.ValidationMessageFor(model => model.QUE_TEXT, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div>
+
+                    <div class="col-lg-6">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OPT_A, htmlAttributes: new { @class = "control-label col-md-2 labels" })
+                            <div class="col-md-10">
+                                <span> @Html.RadioButtonFor(model => model.OPT_A, new { htmlAttributes = new { @class = "form-control " } }) <span class="options">@Model.OPT_A</span> </span>
+                                @Html.ValidationMessageFor(model => model.OPT_A, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OPT_B, htmlAttributes: new { @class = "control-label col-md-2 labels" })
+                            <div class="col-md-10">
+                                <span> @Html.RadioButtonFor(model => model.OPT_B, new { htmlAttributes = new { @class = "form-control" } }) <span class="options">@Model.OPT_B</span> </span>
+                                @Html.ValidationMessageFor(model => model.OPT_B, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OPT_C, htmlAttributes: new { @class = "control-label col-md-2 labels" })
+                            <div class="col-md-10">
+                                <span> @Html.RadioButtonFor(model => model.OPT_C, new { htmlAttributes = new { @class = "form-control" } }) <span class="options">@Model.OPT_C</span> </span>
+                                @Html.ValidationMessageFor(model => model.OPT_C, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OPT_D, htmlAttributes: new { @class = "control-label col-md-2 labels" })
+                            <div class="col-md-10">
+                                <span> @Html.RadioButtonFor(model => model.OPT_D, new { htmlAttributes = new { @class = "form-control" } }) <span class="options">@Model.OPT_D</span> </span>
+                                @Html.ValidationMessageFor(model => model.OPT_D, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        
+                    </div>
+                        <div style="display:none;">
+                            @Html.TextBoxFor(model => model.CORRECT_OPT)
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-5 col-md-7">
+                        <input type="submit" value="Submit" class="btn btn-info" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
