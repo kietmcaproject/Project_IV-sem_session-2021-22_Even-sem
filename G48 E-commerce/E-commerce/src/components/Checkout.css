@@ -1,0 +1,41 @@
+.checkout {
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border: 1px solid rgb(205, 198, 200);
+  width: 40rem;
+  margin: 5rem auto;
+  padding: 2rem;
+  background-color: #131a22;
+  color: white;
+}
+
+.formControl {
+  display: flex;
+  align-items: center;
+}
+
+.formControl label {
+  font-weight: 500;
+  margin: 1rem;
+}
+
+.formControl input,
+.formControl textarea {
+  border-radius: 1rem;
+  outline: none;
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+}
+
+.formAction {
+  margin-top: 15px;
+  padding: 7px;
+  border-radius: 2px;
+  background-color: #febd69;
+  border: 1px solid #846a29;
+  cursor: pointer;
+  color: #111;
+  font-size: 15px;
+  outline: none;
+  text-align: center;
+}

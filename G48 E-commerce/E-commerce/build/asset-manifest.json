@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9518464f.chunk.css",
+    "main.js": "/static/js/main.d17936a9.chunk.js",
+    "main.js.map": "/static/js/main.d17936a9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.968f47d3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.968f47d3.js.map",
+    "static/js/2.f52f6d7e.chunk.js": "/static/js/2.f52f6d7e.chunk.js",
+    "static/js/2.f52f6d7e.chunk.js.map": "/static/js/2.f52f6d7e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.9518464f.chunk.css.map": "/static/css/main.9518464f.chunk.css.map",
+    "static/js/2.f52f6d7e.chunk.js.LICENSE.txt": "/static/js/2.f52f6d7e.chunk.js.LICENSE.txt",
+    "static/media/Ad.3d23d8af.jpg": "/static/media/Ad.3d23d8af.jpg",
+    "static/media/Bag.e1122c96.jpg": "/static/media/Bag.e1122c96.jpg",
+    "static/media/Display.7f574e19.jpg": "/static/media/Display.7f574e19.jpg",
+    "static/media/Keyboard.3bad0a5e.jpg": "/static/media/Keyboard.3bad0a5e.jpg",
+    "static/media/Samsung.0b2693d6.jpg": "/static/media/Samsung.0b2693d6.jpg",
+    "static/media/amazon-logo.64a0d895.png": "/static/media/amazon-logo.64a0d895.png",
+    "static/media/logo.303024a0.png": "/static/media/logo.303024a0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.968f47d3.js",
+    "static/js/2.f52f6d7e.chunk.js",
+    "static/css/main.9518464f.chunk.css",
+    "static/js/main.d17936a9.chunk.js"
+  ]
+}
