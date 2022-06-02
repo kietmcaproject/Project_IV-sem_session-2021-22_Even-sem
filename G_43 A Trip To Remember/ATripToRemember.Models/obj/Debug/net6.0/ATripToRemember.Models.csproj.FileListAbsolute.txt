@@ -1,0 +1,12 @@
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\bin\Debug\net6.0\ATripToRemember.Models.deps.json
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\bin\Debug\net6.0\ATripToRemember.Models.dll
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\bin\Debug\net6.0\ref\ATripToRemember.Models.dll
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\bin\Debug\net6.0\ATripToRemember.Models.pdb
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\obj\Debug\net6.0\ATripToRemember.Models.csproj.AssemblyReference.cache
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\obj\Debug\net6.0\ATripToRemember.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\obj\Debug\net6.0\ATripToRemember.Models.AssemblyInfoInputs.cache
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\obj\Debug\net6.0\ATripToRemember.Models.AssemblyInfo.cs
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\obj\Debug\net6.0\ATripToRemember.Models.csproj.CoreCompileInputs.cache
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\obj\Debug\net6.0\ATripToRemember.Models.dll
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\obj\Debug\net6.0\ref\ATripToRemember.Models.dll
+E:\Karan\ASP.NET Core 6.0\Project\TripToRemember\ATripToRemember\ATripToRemember.Models\obj\Debug\net6.0\ATripToRemember.Models.pdb
