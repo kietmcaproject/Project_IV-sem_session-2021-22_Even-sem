@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Hotel>
+
+<div class="container pb-3">
+    <div class="row">
+        <form method="post" asp-action="Index" class="row p-4" style="background-color: #fff5ee">
+            <div class="col-md-5">
+                <select type="text" name="city"  class="form-select">
+                    <option disabled selected>--Select City--</option>
+                    <option>Agartala</option>>
+                    <option>Ahmedabad</option>
+                    <option>Aizawl</option>
+                    <option>Aurangabad</option>
+                    <option>Amritsar</option>
+                    <option>Banglore</option>
+                    <option>Bhopal</option>
+                    <option>Bhubaneswar</option>
+                    <option>Calicut</option>
+                    <option>Chandigarh</option>
+                    <option>Chennai</option>
+                    <option>Cochin</option>
+                    <option>Coimbatore</option>
+                    <option>Dehradun</option>
+                    <option>Dibrugarh</option>
+                    <option>Gaya</option>
+                    <option>Guwahati</option>
+                    <option>Hubli</option>
+                    <option>Hyderabad</option>
+                    <option>Imphal</option>
+                    <option>Indore</option>
+                    <option>Jaipur</option>
+                    <option>Jammu</option>
+                    <option>Jodhpur</option>
+                    <option>Khajuraho</option>
+                    <option>Kolkata</option>
+                    <option>Leh</option>
+                    <option>Lucknow</option>
+                    <option>Madurai</option>
+                    <option>Mangalore</option>
+                    <option>Mumbai</option>
+                    <option>Mysore</option>
+                    <option>Nagpur</option>
+                    <option>New Delhi</option>
+                    <option>Panaji</option>
+                    <option>Patna</option>
+                    <option>Pune</option>
+                    <option>Raipur</option>
+                    <option>Rajkot</option>
+                    <option>Ranchi</option>
+                    <option>Silchar</option>
+                    <option>Siliguri</option>
+                    <option>Srinagar</option>
+                    <option>Surat</option>
+                    <option>Tiruchirappally</option>
+                    <option>Tirupati</option>
+                    <option>Trivandrum</option>
+                    <option>Udaipur</option>
+                    <option>Vadodara</option>
+                    <option>Varanasi</option>
+                    <option>Visakhapatnam</option>
+                </select>
+            </div>
+            <div class="col-md-5">
+                <select type="text" name="state" class="form-select">
+                    <option disabled selected>--Select State--</option>
+                    <option>Andhra Pradesh</option>
+                    <option>Arunachal Pradesh</option>
+                    <option>Assam</option>
+                    <option>Bihar</option>
+                    <option>Chandigarh Region</option>
+                    <option>Chhattisgarh</option>
+                    <option>Delhi NCR</option>
+                    <option>Goa</option>
+                    <option>Gujarat</option>
+                    <option>Haryana</option>
+                    <option>Himachal Pradesh</option>
+                    <option>Jammu and Kashmir</option>
+                    <option>Jharkhand</option>
+                    <option>Karnataka</option>
+                    <option>Kerala</option>
+                    <option>Ladakh</option>
+                    <option>Madhya Pradesh</option>
+                    <option>Maharashtra</option>
+                    <option>Manipur</option>
+                    <option>Meghalaya</option>
+                    <option>Mizoram</option>
+                    <option>Nagaland</option>
+                    <option>Odisha</option>
+                    <option>Punjab</option>
+                    <option>Rajasthan</option>
+                    <option>Sikkim</option>
+                    <option>Tamil Nadu</option>
+                    <option>Telangana</option>
+                    <option>Tripura</option>
+                    <option>Uttarakhand</option>
+                    <option>Uttar Pradesh</option>
+                    <option>West Bengal</option>
+                </select>
+            </div>
+            <div class="col-md-2 text-end">
+                <button type="submit" class="btn btn-info">Search</button>
+            </div> 
+        </form>
+        @foreach(var hotel in Model)
+        {
+            <div class="col-6 pt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-primary">@hotel.Name</h2>
+                    </div>
+                    <div class="card-body">
+                        <img src="@hotel.ImageUrl" class="img-fluid rounded-start" style="width: 100%; height: 300px" />
+                        <h5 class="text-secondary"><strong>@hotel.Location, @hotel.City, @hotel.State</strong></h5>
+                        <p clas="text-muted">Number of Available Rooms : @hotel.availableRooms</p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a asp-area="Customer" asp-controller="Hotel" asp-action="Details" asp-route-hotelId="@hotel.Id" class="btn btn-info">
+                            <i class="bi bi-eye-fill"></i> &nbsp; Show Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

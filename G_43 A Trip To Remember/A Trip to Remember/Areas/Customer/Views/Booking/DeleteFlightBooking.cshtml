@@ -1,0 +1,71 @@
+﻿@model FlightBooking
+
+<div class="container pt-4">
+    <form method="post" asp-action="DeleteFlightBooking">
+        <input asp-for="@Model.Id" hidden />
+        <div class="card">
+            <div class="card-header bg-black">
+                <div class="text-white pt-4">
+                    <p class="h1">@Model.Flight.StartingLocation <span class="h2">to</span> @Model.Flight.Destination</p>
+                </div>
+            </div>
+            <div class="card-body row" style="font-size: 25px">
+                <div class="col-5">
+                    <strong>
+                        Starting Time
+                        <br />
+                        Reaching Time
+                        <br />
+                        Name
+                        <br />
+                        Email Address
+                        <br />
+                        Phone Number
+                        <br />
+                        Number of Seats
+                        <br />
+                        Total Price
+                        <br />
+                        Booking Id
+                        <br />
+                        Booking Status
+                        <br />
+                        Payment Status
+                        <br />
+                    </strong>
+                </div>
+                <div class="col-7">
+                    : @Model.Flight.StartingTime.ToShortTimeString() (@Model.Flight.StartingTime.ToShortDateString())
+                    <br />
+                    : @Model.Flight.ReachingTime.ToShortTimeString() (@Model.Flight.ReachingTime.ToShortDateString())
+                    <br />
+                    : @Model.ApplicationUser.FirstName @Model.ApplicationUser.LastName
+                    <br />
+                    : @Model.ApplicationUser.Email
+                    <br />
+                    : @Model.ApplicationUser.PhoneNumber
+                    <br />
+                    : @Model.NumberOfTourists
+                    <br />
+                    : @Model.TotalPrice.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"))
+                    <br />
+                    : @Model.Id
+                    <br />
+                    : @Model.BookingStatus
+                    <br />
+                    : @Model.PaymentStatus
+                </div>
+            </div>
+            <div class="card-footer row">
+                <div class="col-6">
+                    <a asp-area="Customer" asp-controller="Booking" asp-action="Index" class="btn btn-secondary">
+                        Back to Bookings
+                    </a>
+                </div>
+                <div class="col-6 text-end">
+                    <button type="submit" class="btn btn-danger">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

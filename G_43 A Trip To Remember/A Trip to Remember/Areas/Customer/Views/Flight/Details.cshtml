@@ -1,0 +1,52 @@
+﻿@model Flight
+
+<div class="container pt-4">
+    <div class="card">
+        <div class="card-header row bg-black">
+            <div class="col-2">
+                <img src="@Model.Airline.ImageUrl" style="width: 150px; height: 100px" class="img-fluid rounded-start" />
+            </div>
+            <div class="col-10 text-white pt-4">
+                <p class="h1">@Model.StartingLocation <span class="h2">to</span> @Model.Destination</p>
+            </div>
+        </div>
+        <div class="card-body row" style="font-size: 25px">
+            <div class="col-5">
+                <strong>
+                    From
+                    <br />
+                    To
+                    <br />
+                    Starting Time
+                    <br />
+                    Reaching Time
+                    <br />
+                    Available Seats
+                    <br />
+                    Price
+                </strong>
+            </div>
+            <div class="col-7">
+                : @Model.StartingLocation
+                <br />
+                : @Model.Destination
+                <br />
+                : @Model.StartingTime.ToShortTimeString() (@Model.StartingTime.ToShortDateString())
+                <br />
+                : @Model.ReachingTime.ToShortTimeString() (@Model.ReachingTime.ToShortDateString())
+                <br />
+                : @Model.AvailableSeats
+                <br />
+                : <span class="text-danger">@Model.Price.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"))</span> <span class="text-muted" style="font-size: 15px">(for one person)</span>
+            </div>
+        </div>
+        <div class="card-footer row">
+            <div class="col-6">
+                <a asp-area="Customer" asp-controller="Flight" asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-area="Customer" asp-controller="Flight" asp-action="Booking" asp-route-flightId="@Model.Id" class="btn btn-info">Book Now</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Flight>
+
+<div class="container pt-4">
+    <div class="card">
+        <div class="card-header">
+            <div class="row text-center">
+                <div class="col-2 h5">
+                    Airline
+                </div>
+                <div class="col-3 h5">
+                    From
+                </div>
+                <div class="col-3 h5">
+                    To
+                </div>
+                <div class="col-2 h5">
+                    Available Seats
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row text-center">
+                @foreach(var flight in Model)
+                {
+                    <div class="col-2">
+                        <img src="@flight.Airline.ImageUrl" style="width: 150px; height: 100px" class="image-fluid rounded-start" />
+                    </div>
+                    <div class="col-3">
+                        <h2>@flight.StartingLocation</h2>
+                        @flight.StartingTime.ToShortTimeString()
+                        <br />
+                        @flight.StartingTime.ToShortDateString()
+                    </div>
+                    <div class="col-3">
+                        <h2>@flight.Destination</h2>
+                        @flight.ReachingTime.ToShortTimeString()
+                        <br />
+                        @flight.ReachingTime.ToShortDateString()
+                    </div>
+                    <div class="col-2 pt-4">
+                        @flight.AvailableSeats
+                    </div>
+                    <div class="col-2 pt-4">
+                        <a asp-area="Customer" asp-controller="Flight" asp-action="Details" asp-route-flightId="@flight.Id" class="btn btn-info">
+                            <i class="bi bi-eye-fill"></i> &nbsp; Show Price
+                        </a>
+                    </div>
+                    <hr />
+                }
+            </div>
+        </div>
+    </div>
+</div>

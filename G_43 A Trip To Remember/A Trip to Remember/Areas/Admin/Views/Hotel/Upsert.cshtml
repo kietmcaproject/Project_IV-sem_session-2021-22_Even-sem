@@ -1,0 +1,184 @@
+﻿@model Hotel
+
+<div class="border p-3 mt-4">
+    <div class="row pb-2">
+        <h2 class="text-primary">@(Model.Id != 0 ? "Update" : "Create") Hotel</h2>
+        <hr />
+        <form method="post" asp-action="Upsert" enctype="multipart/form-data">
+            <input asp-for="Id" hidden />
+            <input asp-for="ImageUrl" hidden />
+            <div class="row">
+                <div class="col-7">
+                    <img src="@Model.ImageUrl" style="width: 100%; height: 400px; border-radius: 5px; border: 1px solid #bbb9b9" />
+                </div>
+                <div class="col-5">
+                    <div class="mb-3">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="availableRooms"></label><br />
+                        <input asp-for="availableRooms" class="form-cotrol"/>
+                        <span asp-validation-for="availableRooms" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="RentPerDay"></label>
+                        <input asp-for="RentPerDay" class="form-control" />
+                        <span asp-validation-for="RentPerDay" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="mb-3">
+                        <label asp-for="ImageUrl"></label>
+                        <input type="file" id="uploadBox" name="file" class="form-control" />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description"></label>
+                    <textarea asp-for="Description" rows="3" class="form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Location"></label>
+                    <input asp-for="Location" class="form-control" />
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="City"></label>
+                    <select asp-for="City" class="form-select">
+                        <option disabled selected>--Select Location--</option>
+                        <option>Agartala</option>>
+                        <option>Ahmedabad</option>
+                        <option>Aizawl</option>
+                        <option>Aurangabad</option>
+                        <option>Amritsar</option>
+                        <option>Banglore</option>
+                        <option>Bhopal</option>
+                        <option>Bhubaneswar</option>
+                        <option>Calicut</option>
+                        <option>Chandigarh</option>
+                        <option>Chennai</option>
+                        <option>Cochin</option>
+                        <option>Coimbatore</option>
+                        <option>Dehradun</option>
+                        <option>Dibrugarh</option>
+                        <option>Gaya</option>
+                        <option>Guwahati</option>
+                        <option>Hubli</option>
+                        <option>Hyderabad</option>
+                        <option>Imphal</option>
+                        <option>Indore</option>
+                        <option>Jaipur</option>
+                        <option>Jammu</option>
+                        <option>Jodhpur</option>
+                        <option>Khajuraho</option>
+                        <option>Kolkata</option>
+                        <option>Leh</option>
+                        <option>Lucknow</option>
+                        <option>Madurai</option>
+                        <option>Mangalore</option>
+                        <option>Mumbai</option>
+                        <option>Mysore</option>
+                        <option>Nagpur</option>
+                        <option>New Delhi</option>
+                        <option>Panaji</option>
+                        <option>Patna</option>
+                        <option>Pune</option>
+                        <option>Raipur</option>
+                        <option>Rajkot</option>
+                        <option>Ranchi</option>
+                        <option>Silchar</option>
+                        <option>Siliguri</option>
+                        <option>Srinagar</option>
+                        <option>Surat</option>
+                        <option>Tiruchirappally</option>
+                        <option>Tirupati</option>
+                        <option>Trivandrum</option>
+                        <option>Udaipur</option>
+                        <option>Vadodara</option>
+                        <option>Varanasi</option>
+                        <option>Visakhapatnam</option>
+                    </select>
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="State"></label>
+                    <select asp-for="State" class="form-select">
+                        <option disabled selected>--Select Location--</option>
+                        <option>Andhra Pradesh</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Assam</option>
+                        <option>Bihar</option>
+                        <option>Chandigarh Region</option>
+                        <option>Chhattisgarh</option>
+                        <option>Delhi NCR</option>
+                        <option>Goa</option>
+                        <option>Gujarat</option>
+                        <option>Haryana</option>
+                        <option>Himachal Pradesh</option>
+                        <option>Jammu and Kashmir</option>
+                        <option>Jharkhand</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Ladakh</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharashtra</option>
+                        <option>Manipur</option>
+                        <option>Meghalaya</option>
+                        <option>Mizoram</option>
+                        <option>Nagaland</option>
+                        <option>Odisha</option>
+                        <option>Punjab</option>
+                        <option>Rajasthan</option>
+                        <option>Sikkim</option>
+                        <option>Tamil Nadu</option>
+                        <option>Telangana</option>
+                        <option>Tripura</option>
+                        <option>Uttarakhand</option>
+                        <option>Uttar Pradesh</option>
+                        <option>West Bengal</option>
+                    </select>
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            @if(Model.Id != 0)
+            {
+                <button type="submit" class="btn btn-primary" style="width: 150px">Update</button>
+            }
+            else
+            {
+                <button type="submit" onclick="return ValidateInput()" class="btn btn-primary" style="width: 150px">Create</button>
+            }
+            &nbsp;
+            <a asp-controller="Hotel" asp-action="Index" class="btn btn-secondary" style="width: 150px">Back to List</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+        });
+        function ValidateInput(){
+            if(document.getElementById("uploadBox").value == ""){
+                swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please upload an Image!',
+                });
+                return false;
+            }
+            return true;
+        }
+    </script>
+}

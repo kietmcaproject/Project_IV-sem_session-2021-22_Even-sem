@@ -1,0 +1,87 @@
+﻿@model HotelReservation
+
+<div class="container pb-3">
+    <form method="post" asp-action="Booking">
+        <input asp-for="HotelId" hidden />
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-primary">@Model.Hotel.Name</h2>
+            </div>
+            <div class="card-body">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="@Model.Hotel.ImageUrl" class="img-fluid rounded-start" style="width: 100%; height: 300px" />
+                        <p class="text-warning h4">@Model.Hotel.Location, @Model.Hotel.City, @Model.Hotel.State</p>
+                        <p class="text-black">
+                            Number of Available Rooms : <strong>@Model.Hotel.availableRooms</strong>
+                            <br />
+                            Rend Per Day (one room) : <strong>@Model.Hotel.RentPerDay.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"))</strong>
+                        </p>
+                    </div>
+                    <div class="col-md-7 p-3">
+                        @if (Model.numberOfDays == 0)
+                        {
+                            <div class="mb-3">
+                                <label asp-for="FromDate"></label>
+                                <input type="date" asp-for="FromDate" class="form-control" />
+                                <span asp-validation-for="FromDate" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="ToDate"></label>
+                                <input type="date" asp-for="ToDate" class="form-control" />
+                                <span asp-validation-for="ToDate" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="numberOfRooms"></label>
+                                <input asp-for="numberOfRooms" class="form-control" />
+                                <span asp-validation-for="numberOfRooms" class="text-danger"></span>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="mb-3">
+                                <label asp-for="FromDate"></label>
+                                <input type="date" asp-for="FromDate" class="form-control" readonly />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="ToDate"></label>
+                                <input type="date" asp-for="ToDate" class="form-control" readonly />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="numberOfDays"></label>
+                                <input asp-for="numberOfDays" class="form-control" readonly />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="numberOfRooms"></label>
+                                <input asp-for="numberOfRooms" class="form-control" readonly />
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="TotalRent"></label>
+                                <input asp-for="TotalRent" hidden />
+                                <input type="text" value="@Model.TotalRent.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"))" class="form-control text-danger" readonly />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer row">
+                <div class="col-6">
+                    <a asp-area="Customer" asp-controller="Hotel" asp-action="Booking" asp-route-hotelId="@Model.Hotel.Id" class="btn btn-info">
+                        <i class="bi bi-eye-fill"></i> &nbsp; Show Details
+                    </a>
+                </div>
+                <div class="col-6 text-end">
+                    @if (Model.numberOfDays == 0)
+                    {
+                        <button type="submit" class="btn btn-success">Book</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-success">Confirm Booking</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

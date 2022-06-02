@@ -1,0 +1,78 @@
+﻿@model FlightBooking
+
+<div class="container pt-4">
+    <form method="post" asp-action="Booking">
+        <input asp-for="@Model.FlightId" hidden />
+        <div class="card">
+            <div class="card-header row bg-black">
+                <div class="col-2">
+                    <img src="@Model.Flight.Airline.ImageUrl" style="width: 150px; height: 100px" class="img-fluid rounded-start" />
+                </div>
+                <div class="col-10 text-white pt-4">
+                    <p class="h1">@Model.Flight.StartingLocation <span class="h2">to</span> @Model.Flight.Destination</p>
+                </div>
+            </div>
+            <div class="card-body row" style="font-size: 25px">
+                <div class="col-5">
+                    <strong>
+                        Starting Time
+                        <br />
+                        Reaching Time
+                        <br />
+                        Available Seats
+                        <br />
+                        Price
+                        <br />
+                        <label asp-for="@Model.NumberOfTourists"></label>
+                        @if(Model.TotalPrice != 0)
+                        {
+                            <br />
+                            <label asp-for="@Model.TotalPrice"></label>
+                        }
+                    </strong>
+                </div>
+                <div class="col-7">
+                    : @Model.Flight.StartingTime.ToShortTimeString() (@Model.Flight.StartingTime.ToShortDateString())
+                    <br />
+                    : @Model.Flight.ReachingTime.ToShortTimeString() (@Model.Flight.ReachingTime.ToShortDateString())
+                    <br />
+                    : @Model.Flight.AvailableSeats
+                    <br />
+                    : <span>@Model.Flight.Price.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"))</span> <span class="text-muted" style="font-size: 15px">(for one person)</span>
+                    @if(Model.TotalPrice == 0)
+                    {
+                        <br />
+                        <input asp-for="@Model.NumberOfTourists" />
+                        <br />
+                        <span asp-validation-for="@Model.NumberOfTourists" class="text-danger"></span>
+                    }
+                    else
+                    {
+                        <br />
+                        <input asp-for="@Model.NumberOfTourists" readonly />
+                        <input asp-for="@Model.TotalPrice" hidden />
+                        <br />
+                        <input type="text" value="@Model.TotalPrice.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"))" class="form-control text-danger" readonly />
+                    }
+                </div>
+            </div>
+            <div class="card-footer row">
+                <div class="col-6">
+                    <a asp-area="Customer" asp-controller="Flight" asp-action="Booking" asp-route-flightId="@Model.Flight.Id" class="btn btn-info">
+                        <i class="bi bi-eye-fill"></i> &nbsp; Show Details
+                    </a>
+                </div>
+                <div class="col-6 text-end">
+                    @if (Model.TotalPrice == 0)
+                    {
+                        <button type="submit" class="btn btn-success">Book</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-success">Confirm Booking</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

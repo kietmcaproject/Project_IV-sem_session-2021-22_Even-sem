@@ -1,0 +1,62 @@
+﻿@model HotelReservation
+
+<div class="container pb-3">
+        <div class="card">
+            <div class="row g-0">
+                <div class="card-header">
+                    <h2 class="text-primary">@Model.Hotel.Name</h2>
+                    <p class="text-secondary">@Model.Hotel.Location, @Model.Hotel.City, @Model.Hotel.State</p>
+                </div>
+                <div class="col-7">
+                    <div class="card-body row">
+                        <div class="col-6">
+                            Name
+                            <br />
+                            Email Address
+                            <br />
+                            Phone Number
+                            <br />
+                            Number of Rooms
+                            <br />
+                            Number of Days
+                            <br />
+                            Total Rent
+                            <br />
+                            Reservation Id
+                            <br />
+                            Reservation Status
+                            <br />
+                            Payment Status
+                        </div>
+                        <div class="col-6">
+                            : @Model.ApplicationUser.FirstName @Model.ApplicationUser.LastName
+                            <br />
+                            : @Model.ApplicationUser.Email
+                            <br />
+                            : @Model.ApplicationUser.PhoneNumber
+                            <br />
+                            : @Model.numberOfRooms
+                            <br />
+                            : @Model.numberOfDays
+                            <br />
+                            : @Model.TotalRent.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"))
+                            <br />
+                            : @Model.Id
+                            <br />
+                            : @Model.ReservationStatus
+                            <br />
+                            : @Model.PaymentStatus
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <img src="@Model.Hotel.ImageUrl" class="img-fluid rounded-start" style="width: 100%; height: 300px" />
+                </div>
+            </div>
+            <div class="card-footer row">
+                <div class="col-6">
+                    <a asp-area="Customer" asp-controller="Booking" asp-action="Index" class="btn btn-secondary">Back to Bookings</a>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,154 @@
+﻿@model ATripToRemember.Models.ViewModels.BookingVM
+
+<div class="container pt-4">
+    <h1 class="text-center alert alert-light pt-4">All Bookings</h1>
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-info">Flight Bookings</h2>
+        </div>
+        <div class="card-body">
+            @foreach (var flightBooking in Model.FlightBookings)
+            {
+
+                <h3 class="text-warning">@flightBooking.Flight.StartingLocation to @flightBooking.Flight.Destination</h3>
+                <div class="row">
+                    <strong class="col-3">
+                        Number of Seats
+                        <br />
+                        Booking Status
+                        <br />
+                        Payment Status
+                    </strong>
+                    <div class="col-3">
+                        : @flightBooking.NumberOfTourists
+                        <br />
+                        : @if (flightBooking.BookingStatus == "Requested")
+                        {
+                            <span class="badge bg-info text-white">@flightBooking.BookingStatus</span>
+                        }
+                        else if (flightBooking.BookingStatus == "Approved")
+                        {
+                            <span class="badge bg-success text-white">@flightBooking.BookingStatus</span>
+                        }
+                        else if (flightBooking.BookingStatus == "Completed")
+                        {
+                            <span class="badge bg-danger text-white">@flightBooking.BookingStatus</span>
+                        }
+                        <br />
+                        : @if (flightBooking.PaymentStatus == "Pending")
+                        {
+                            <span class="badge bg-info text-white">@flightBooking.PaymentStatus</span>
+                        }
+                        else if (flightBooking.PaymentStatus == "Paid")
+                        {
+                            <span class="badge bg-success text-white">@flightBooking.PaymentStatus</span>
+                        }
+                        else if (flightBooking.PaymentStatus == "Rejected")
+                        {
+                            <span class="badge bg-danger text-white">@flightBooking.PaymentStatus</span>
+                        }
+                    </div>
+                    <div class="col-6 text-end">
+                        @if (flightBooking.PaymentStatus == "Pending")
+                        {
+                            <a asp-area="Customer" asp-controller="Booking" asp-action="DeleteFlightBooking" asp-route-flightBookingId="@flightBooking.Id" class="w-50 btn btn-danger">
+                                Cancel Booking
+                            </a>
+                            <br />
+                            <br />
+                            <a asp-area="Customer" asp-controller="Booking" asp-action="FlightPayment" asp-route-flightBookingId="@flightBooking.Id" class="w-50 btn btn-success">
+                                Pay Now
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-area="Customer" asp-controller="Booking" asp-action="FlightDetails" asp-route-flightBookingId="@flightBooking.Id" class="w-50 btn btn-info">
+                                <i class="bi bi-eye-fill"></i> &nbsp; Details
+                            </a>
+                        }
+                    </div>
+                </div>
+                <hr />
+            }
+        </div>
+    </div>
+    <br />
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-info">Hotel Reservations</h2>
+        </div>
+        <div class="card-body">
+            @foreach (var hotelReservation in Model.HotelReservations)
+            {
+                <h3 class="text-warning">@hotelReservation.Hotel.Name</h3>
+                <div class="row">
+                    <strong class="col-3">
+                        Number of Rooms
+                        <br />
+                        From
+                        <br />
+                        To
+                        <br />
+                        Reservation Status
+                        <br />
+                        Payment Status
+                    </strong>
+                    <div class="col-3">
+                        : @hotelReservation.numberOfRooms
+                        <br />
+                        : @hotelReservation.FromDate.ToShortDateString()
+                        <br />
+                        : @hotelReservation.ToDate.ToShortDateString()
+                        <br />
+                        : @if (hotelReservation.ReservationStatus == "Requested")
+                        {
+                            <span class="badge bg-info text-white">@hotelReservation.ReservationStatus</span>
+                        }
+                        else if (hotelReservation.ReservationStatus == "Approved")
+                        {
+                            <span class="badge bg-success text-white">@hotelReservation.ReservationStatus</span>
+                        }
+                        else if (hotelReservation.ReservationStatus == "Completed")
+                        {
+                            <span class="badge bg-danger text-white">@hotelReservation.ReservationStatus</span>
+                        }
+                        <br />
+                        : @if (hotelReservation.PaymentStatus == "Pending")
+                        {
+                            <span class="badge bg-info text-white">@hotelReservation.PaymentStatus</span>
+                        }
+                        else if (hotelReservation.PaymentStatus == "Paid")
+                        {
+                            <span class="badge bg-success text-white">@hotelReservation.PaymentStatus</span>
+                        }
+                        else if (hotelReservation.PaymentStatus == "Rejected")
+                        {
+                            <span class="badge bg-danger text-white">@hotelReservation.PaymentStatus</span>
+                        }
+                    </div>
+                    <div class="col-6 text-end">
+                        @if (hotelReservation.PaymentStatus == "Pending")
+                        {
+                            <a asp-area="Customer" asp-controller="Booking" asp-action="DeleteHotelReservation" asp-route-hotelReservationId="@hotelReservation.Id" class="w-50 btn btn-danger">
+                                Cancel Booking
+                            </a>
+                            <br />
+                            <br />
+                            <a asp-area="Customer" asp-controller="Booking" asp-action="Payment" asp-route-hotelReservationId="@hotelReservation.Id" class="w-50 btn btn-success">
+                                Pay Now
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-area="Customer" asp-controller="Booking" asp-action="HotelDetails" asp-route-hotelReservationId="@hotelReservation.Id" class="w-50 btn btn-info">
+                                <i class="bi bi-eye-fill"></i> &nbsp; Details
+                            </a>
+                        }
+                    </div>
+                </div>
+                <hr />
+            }
+        </div>
+    </div>
+
+</div>

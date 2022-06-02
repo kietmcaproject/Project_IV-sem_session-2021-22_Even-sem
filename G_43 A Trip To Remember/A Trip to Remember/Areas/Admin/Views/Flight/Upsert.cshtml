@@ -1,0 +1,162 @@
+﻿@model ATripToRemember.Models.ViewModels.FlightVM
+
+<form method="post" asp-action="Upsert">
+    <input asp-for="Flight.Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">@(Model.Flight.Id != 0 ? "Update" : "Create") Flight</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Flight.StartingLocation"></label>
+            <select asp-for="Flight.StartingLocation" class="form-select">
+                <option disabled selected>--Select Location--</option>
+                        <option>Agartala</option>>
+                        <option>Ahmedabad</option>
+                        <option>Aizawl</option>
+                        <option>Aurangabad</option>
+                        <option>Amritsar</option>
+                        <option>Banglore</option>
+                        <option>Bhopal</option>
+                        <option>Bhubaneswar</option>
+                        <option>Calicut</option>
+                        <option>Chandigarh</option>
+                        <option>Chennai</option>
+                        <option>Cochin</option>
+                        <option>Coimbatore</option>
+                        <option>Dehradun</option>
+                        <option>Dibrugarh</option>
+                        <option>Gaya</option>
+                        <option>Guwahati</option>
+                        <option>Hubli</option>
+                        <option>Hyderabad</option>
+                        <option>Imphal</option>
+                        <option>Indore</option>
+                        <option>Jaipur</option>
+                        <option>Jammu</option>
+                        <option>Jodhpur</option>
+                        <option>Khajuraho</option>
+                        <option>Kolkata</option>
+                        <option>Leh</option>
+                        <option>Lucknow</option>
+                        <option>Madurai</option>
+                        <option>Mangalore</option>
+                        <option>Mumbai</option>
+                        <option>Mysore</option>
+                        <option>Nagpur</option>
+                        <option>New Delhi</option>
+                        <option>Panaji</option>
+                        <option>Patna</option>
+                        <option>Pune</option>
+                        <option>Raipur</option>
+                        <option>Rajkot</option>
+                        <option>Ranchi</option>
+                        <option>Silchar</option>
+                        <option>Siliguri</option>
+                        <option>Srinagar</option>
+                        <option>Surat</option>
+                        <option>Tiruchirappally</option>
+                        <option>Tirupati</option>
+                        <option>Trivandrum</option>
+                        <option>Udaipur</option>
+                        <option>Vadodara</option>
+                        <option>Varanasi</option>
+                        <option>Visakhapatnam</option>
+            </select>
+            <span asp-validation-for="Flight.StartingLocation" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Flight.Destination"></label>
+            <select asp-for="Flight.Destination" class="form-control">
+                <option disabled selected>--Select Location--</option>
+                        <option>Agartala</option>>
+                        <option>Ahmedabad</option>
+                        <option>Aizawl</option>
+                        <option>Aurangabad</option>
+                        <option>Amritsar</option>
+                        <option>Banglore</option>
+                        <option>Bhopal</option>
+                        <option>Bhubaneswar</option>
+                        <option>Calicut</option>
+                        <option>Chandigarh</option>
+                        <option>Chennai</option>
+                        <option>Cochin</option>
+                        <option>Coimbatore</option>
+                        <option>Dehradun</option>
+                        <option>Dibrugarh</option>
+                        <option>Gaya</option>
+                        <option>Guwahati</option>
+                        <option>Hubli</option>
+                        <option>Hyderabad</option>
+                        <option>Imphal</option>
+                        <option>Indore</option>
+                        <option>Jaipur</option>
+                        <option>Jammu</option>
+                        <option>Jodhpur</option>
+                        <option>Khajuraho</option>
+                        <option>Kolkata</option>
+                        <option>Leh</option>
+                        <option>Lucknow</option>
+                        <option>Madurai</option>
+                        <option>Mangalore</option>
+                        <option>Mumbai</option>
+                        <option>Mysore</option>
+                        <option>Nagpur</option>
+                        <option>New Delhi</option>
+                        <option>Panaji</option>
+                        <option>Patna</option>
+                        <option>Pune</option>
+                        <option>Raipur</option>
+                        <option>Rajkot</option>
+                        <option>Ranchi</option>
+                        <option>Silchar</option>
+                        <option>Siliguri</option>
+                        <option>Srinagar</option>
+                        <option>Surat</option>
+                        <option>Tiruchirappally</option>
+                        <option>Tirupati</option>
+                        <option>Trivandrum</option>
+                        <option>Udaipur</option>
+                        <option>Vadodara</option>
+                        <option>Varanasi</option>
+                        <option>Visakhapatnam</option>
+            </select>
+            <span asp-validation-for="Flight.Destination" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Flight.StartingTime"></label>
+            <input asp-for="Flight.StartingTime" class="form-control" />
+            <span asp-validation-for="Flight.StartingTime" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Flight.ReachingTime"></label>
+            <input asp-for="Flight.ReachingTime" class="form-control" />
+            <span asp-validation-for="Flight.ReachingTime" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Flight.Price"></label>
+            <input asp-for="Flight.Price" class="form-control" />
+            <span asp-validation-for="Flight.Price" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Flight.AvailableSeats"></label>
+            <input asp-for="Flight.AvailableSeats" class="form-control" />
+            <span asp-validation-for="Flight.AvailableSeats" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Flight.AirLineId"></label>
+            <select asp-for="Flight.AirLineId" asp-items="@Model.AirlineList" class="form-select">
+                <option disabled selected>--Select Airline--</option>
+            </select>
+            <span asp-validation-for="Flight.AirLineId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 150px">@(Model.Flight.Id != 0 ? "Update" : "Create")</button>
+        <a asp-controller="Flight" asp-action="Index" class="btn btn-secondary" style="width: 150px">Back to List</a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

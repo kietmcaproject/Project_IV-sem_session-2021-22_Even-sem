@@ -1,0 +1,26 @@
+﻿<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Hotels List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Hotel" asp-action="Upsert" class="btn btn-primary"><i class="bi bi-plus-circle"></i>&nbsp; Add New Hotel</a>
+        </div>
+    </div>
+    <br /><br />
+    <table id="tblData" class="table table-bordered table-striped" style="width: 100%; text-align: center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>City</th>
+                <th>Rent Per Day</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts{
+    <script src="~/js/hotel.js"></script>
+}
